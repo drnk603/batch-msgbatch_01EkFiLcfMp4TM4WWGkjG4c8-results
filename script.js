@@ -419,7 +419,7 @@
 
       const nameField = form.querySelector('#booking-name');
       if (nameField) {
-        const namePattern = /^[a-zA-ZÀ-ÿs-']{2,50}$/;
+        const namePattern = /^[a-zA-ZÀ-ÿ\s\-']{2,50}$/;
         if (!namePattern.test(nameField.value.trim())) {
           this.showError(nameField, 'Please enter a valid name (2-50 characters, letters only)');
           isValid = false;
@@ -428,7 +428,7 @@
 
       const emailField = form.querySelector('#booking-email');
       if (emailField) {
-        const emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(emailField.value.trim())) {
           this.showError(emailField, 'Please enter a valid email address');
           isValid = false;
@@ -437,7 +437,7 @@
 
       const phoneField = form.querySelector('#booking-phone');
       if (phoneField) {
-        const phonePattern = /^[ds+-()[]]{10,20}$/;
+        const phonePattern = /^[\d\s+\-()]{10,20}$/;
         if (!phonePattern.test(phoneField.value.trim())) {
           this.showError(phoneField, 'Please enter a valid phone number (10-20 digits)');
           isValid = false;
